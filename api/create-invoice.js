@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
         // 🔥 IMPORTANT: CHANGE THIS URL AFTER DEPLOYMENT
         // استبدل الرابط أدناه برابط Vercel الخاص بك بعد النشر
         // =====================================================
-        const YOUR_APP_URL = 'https://YOUR_APP_URL.vercel.app';
+        const YOUR_APP_URL = 'https://humanity-store-3z8j.vercel.app/';
 
         const response = await axios.post(
             'https://api.nowpayments.io/v1/invoice',
