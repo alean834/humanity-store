@@ -33,13 +33,13 @@ module.exports = async (req, res) => {
         // 3. الرابط الصحيح (بدون slash في النهاية)
         const YOUR_APP_URL = 'https://humanity-store-3z8j.vercel.app';
 
-        // 4. طلب NowPayments
+        // 4. طلب NowPayments (مع تغيير pay_currency إلى usdt)
         const response = await axios.post(
             'https://api.nowpayments.io/v1/invoice',
             {
                 price_amount: amount,
                 price_currency: 'usd',
-                pay_currency: 'usd',
+                pay_currency: 'usdt', // 🔥 تغيير من 'usd' إلى 'usdt'
                 order_id: orderId || 'HUMANITY_' + Date.now(),
                 order_description: items?.join(', ') || 'Donation',
                 success_url: YOUR_APP_URL + '?payment=success',
