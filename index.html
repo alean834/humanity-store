@@ -710,7 +710,7 @@
         }
 
         // ==========================================================
-        //  CHECKOUT & PAYMENT
+        //  CHECKOUT & PAYMENT (MODIFIED TO SHOW DETAILED ERRORS)
         // ==========================================================
         async function renderCheckout() {
             const items = details();
@@ -747,6 +747,8 @@
                     })
                 });
                 const data = await response.json();
+                console.log('Server response:', data); // لمعرفة التفاصيل في Console
+
                 if (data.invoice_url) {
                     payBtn.textContent = '💳 Go to Secure Payment';
                     payBtn.disabled = false;
@@ -755,9 +757,13 @@
                         window.open(data.invoice_url, '_blank');
                     };
                 } else {
-                    payBtn.textContent = '⚠️ Error, please try again';
+                    // عرض رسالة الخطأ التفصيلية
+                    const errorMsg = data.error || data.message || 'Unknown error';
+                    const details = data.nowpayments_response || data.details || '';
+                    payBtn.textContent = `⚠️ Error: ${errorMsg}`;
                     payBtn.disabled = false;
                     payBtn.style.opacity = '1';
+                    console.error('Payment error details:', data);
                 }
             } catch (e) {
                 payBtn.textContent = '⚠️ Could not connect to server';
@@ -784,4 +790,4 @@
         };
     </script>
 </body>
-  </html>
+</html>
