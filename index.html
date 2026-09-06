@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Humanity Store | Donate Securely</title>
+    <style>
+        /* ===== RESET & ROOT ===== */
+        :root {
+            --primary: #e76f51;
+            --dark: #20251f;
+            --bg: #f8f7f3;
+            --soft: #edf3ea;
+            --white: #fff;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            height: 74px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+        }
+        .logo span {
+            color: var(--primary);
+        }
+        nav {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            font-size: 14px;
+        }
+        .cart-count {
+            background: var(--primary);
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 560px;
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 70px;
+            background: linear-gradient(135deg, #eef5ec, #fff8ed);
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            max-width: 650px;
+        }
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #c75c40;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 58px;
+            line-height: 1.05;
+            margin: 12px 0;
+        }
+        .highlight {
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #5f685f;
+        }
+        .hero-card {
+            background: #fff;
+            padding: 38px;
+            border-radius: 25px;
+            text-align: center;
+            max-width: 310px;
+            box-shadow: 0 20px 50px #00000012;
+        }
+        .big-icon {
+            font-size: 70px;
+        }
+        .btn {
+            border: 0;
+            display: inline-block;
+            padding: 15px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px 8px 0 0;
+            font-size: 15px;
+        }
+        .primary {
+            background: var(--primary);
+            color: #fff;
+        }
+        .secondary {
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section,
+        .page {
+            padding: 70px 10%;
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .heading h2 {
+            font-size: 36px;
+            margin: 8px;
+        }
+        .categories,
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card,
+        .step {
+            background: #fff;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #e9e6df;
+        }
+        .card {
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px #00000010;
+        }
+        .card-icon {
+            font-size: 42px;
+        }
+        .card p,
+        .step p {
+            color: #697069;
+            line-height: 1.6;
+        }
+        .how {
+            background: var(--soft);
+        }
+        .step span {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* ===== HIDDEN / PAGES ===== */
+        .hidden {
+            display: none !important;
+        }
+        .page-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .page-title h1 {
+            font-size: 42px;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .product-section {
+            margin-bottom: 50px;
+        }
+        .product-section h2 {
+            font-size: 28px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product {
+            background: #fff;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #e8e5de;
+        }
+        .product-icon {
+            font-size: 48px;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        .quantity {
+            display: flex;
+            gap: 13px;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .quantity button {
+            border: 0;
+            background: var(--soft);
+            font-size: 19px;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+        }
+        .add {
+            background: var(--dark);
+            color: #fff;
+            width: 100%;
+            border: 0;
+            padding: 13px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ===== CART ===== */
+        .cart-row {
+            background: #fff;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1.5fr 150px 130px 70px;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .remove {
+            border: 0;
+            background: none;
+            cursor: pointer;
+            font-size: 19px;
+        }
+        .total {
+            background: var(--dark);
+            color: #fff;
+            padding: 24px;
+            text-align: right;
+            font-size: 21px;
+        }
+        .continue {
+            display: block;
+            width: max-content;
+            margin: 20px 0 0 auto;
+        }
+        .empty {
+            text-align: center;
+            background: #fff;
+            padding: 55px;
+            border-radius: 18px;
+        }
+
+        /* ===== CHECKOUT ===== */
+        .checkout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+        }
+        .payment,
+        .summary {
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+        }
+        .payment-total {
+            font-size: 22px;
+            margin: 25px 0;
+        }
+        .card-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            font-size: 28px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .warning {
+            background: #fff0da;
+            padding: 15px;
+            border-radius: 10px;
+            line-height: 1.8;
+            font-size: 14px;
+            border-right: 4px solid #e76f51;
+        }
+        .small {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.6;
+        }
+        .pay-btn {
+            background: #2ecc71;
+            color: #fff;
+            width: 100%;
+            border: 0;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        .pay-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #2ecc71;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px #00000030;
+            z-index: 999;
+            display: none;
+            font-weight: bold;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            background: var(--dark);
+            color: #ddd;
+            padding: 35px;
+            margin-top: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 800px) {
+            .navbar {
+                padding: 0 4%;
+                height: auto;
+                min-height: 70px;
+                flex-wrap: wrap;
+            }
+            .navbar nav {
+                padding: 12px 0;
+                gap: 12px;
+                font-size: 12px;
+            }
+            .hero {
+                padding: 55px 7%;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero h1,
+            h1 {
+                font-size: 40px;
+            }
+            .section,
+            .page {
+                padding: 50px 6%;
+            }
+            .categories,
+            .steps,
+            .product-grid,
+            .checkout {
+                grid-template-columns: 1fr;
+            }
+            .cart-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .continue {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="navbar">
+        <a href="#" class="logo" onclick="showPage('home')">❤️ Humanity<span>Store</span></a>
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('products')">Support Needs</a>
+            <a href="#" onclick="showPage('cart')">❤️ Cart <span class="cart-count" id="cartCount">0</span></a>
+        </nav>
+    </header>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast">✅ Added to cart!</div>
+
+    <!-- ===== HOME PAGE ===== -->
+    <section id="home" class="view">
+        <div class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">DIRECT • HUMAN • TRANSPARENT</p>
+                <h1>Your Support Becomes <span class="highlight">Real Help.</span></h1>
+                <p>Choose essential items, select the quantity, and pay securely with your credit card or USDT.</p>
+                <button class="btn primary" onclick="showPage('products')">Explore Needs ❤️</button>
+                <button class="btn secondary" onclick="document.getElementById('how').scrollIntoView()">How It Works</button>
+            </div>
+            <div class="hero-card">
+                <div class="big-icon">💳</div>
+                <h3>Pay with Ease</h3>
+                <p>We accept Visa, Mastercard, and USDT.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="heading">
+                <p class="eyebrow">CHOOSE A CATEGORY</p>
+                <h2>Essential needs you can support</h2>
+            </div>
+            <div class="categories">
+                <div class="card" onclick="showProducts('food')"><div class="card-icon">🥬</div><h3>Food</h3><p>Fresh groceries & supplies.</p></div>
+                <div class="card" onclick="showProducts('clothing')"><div class="card-icon">👕</div><h3>Clothing</h3><p>Clothes & shoes.</p></div>
+                <div class="card" onclick="showProducts('children')"><div class="card-icon">👶</div><h3>Children</h3><p>Kids' essentials.</p></div>
+                <div class="card" onclick="showProducts('home')"><div class="card-icon">🏠</div><h3>Home</h3><p>Household items.</p></div>
+            </div>
+        </section>
+
+        <section id="how" class="section how">
+            <div class="heading">
+                <p class="eyebrow">SIMPLE & CLEAR</p>
+                <h2>How Humanity Store Works</h2>
+            </div>
+            <div class="steps">
+                <div class="step"><span>01</span><h3>Choose</h3><p>Select the needs you want to support.</p></div>
+                <div class="step"><span>02</span><h3>Quantity</h3><p>Pick how much you'd like to provide.</p></div>
+                <div class="step"><span>03</span><h3>Pay</h3><p>Pay securely via NowPayments.</p></div>
+                <div class="step"><span>04</span><h3>Impact</h3><p>Your donation reaches those in need.</p></div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ===== PRODUCTS PAGE ===== -->
+    <section id="products" class="view hidden page">
+        <div class="page-title">
+            <p class="eyebrow">CHOOSE WHAT TO SUPPORT</p>
+            <h1>Essential Needs</h1>
+        </div>
+        <div id="productsContainer"></div>
+    </section>
+
+    <!-- ===== CART PAGE ===== -->
+    <section id="cart" class="view hidden page">
+        <div class="page-title">
+            <p class="eyebrow">YOUR SELECTIONS</p>
+            <h1>❤️ Support Cart</h1>
+        </div>
+        <div id="cartContainer"></div>
+    </section>
+
+    <!-- ===== CHECKOUT PAGE ===== -->
+    <section id="checkout" class="view hidden page">
+        <div class="page-title">
+            <p class="eyebrow">COMPLETE YOUR DONATION</p>
+            <h1>💳 Secure Payment</h1>
+        </div>
+        <div class="checkout">
+            <div class="payment">
+                <h2>Payment Details</h2>
+                <div class="payment-total">Total Donation: <strong id="checkoutTotal">0 USDT</strong></div>
+                <div class="card-icons">
+                    <span>💳 Visa</span>
+                    <span>💳 Mastercard</span>
+                    <span>🪙 USDT</span>
+                </div>
+                <button id="paymentButton" class="pay-btn">💳 Pay Now (Card or USDT)</button>
+                <p style="text-align:center;font-size:13px;color:#777;">🔒 Fully encrypted. We do not store your card details.</p>
+            </div>
+            <div class="summary">
+                <h3>📦 Donation Summary</h3>
+                <div id="checkoutItems"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>© 2026 Humanity Store — Your donation creates real impact.</footer>
+
+    <!-- ============================================================ -->
+    <!-- ===================== JAVASCRIPT ============================= -->
+    <!-- ============================================================ -->
+    <script>
+        // ==========================================================
+        //  PRODUCT DATA (all in English)
+        // ==========================================================
+        const products = [
+            { id: "veg", category: "food", icon: "🥬", name: "Fresh Vegetables", price: 5, unit: "kg" },
+            { id: "rice", category: "food", icon: "🍚", name: "Rice", price: 3, unit: "kg" },
+            { id: "flour", category: "food", icon: "🌾", name: "Flour", price: 2, unit: "kg" },
+            { id: "clothes", category: "clothing", icon: "👕", name: "Children's Clothes", price: 20, unit: "set" },
+            { id: "shoes", category: "clothing", icon: "👟", name: "Children's Shoes", price: 15, unit: "pair" },
+            { id: "milk", category: "children", icon: "🍼", name: "Baby Milk", price: 25, unit: "item" },
+            { id: "diapers", category: "children", icon: "🧷", name: "Diapers", price: 18, unit: "pack" },
+            { id: "blanket", category: "home", icon: "🛏️", name: "Blanket", price: 25, unit: "item" },
+            { id: "water", category: "home", icon: "💧", name: "Clean Water", price: 10, unit: "unit" }
+        ];
+
+        const categories = {
+            food: "🥬 Food",
+            clothing: "👕 Clothing",
+            children: "👶 Children",
+            home: "🏠 Home"
+        };
+
+        let quantities = {};
+
+        // ==========================================================
+        //  TOAST NOTIFICATION
+        // ==========================================================
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.style.display = 'block';
+            setTimeout(() => t.style.display = 'none', 3000);
+        }
+
+        // ==========================================================
+        //  PAGE NAVIGATION
+        // ==========================================================
+        function showPage(page) {
+            document.querySelectorAll(".view").forEach(el => el.classList.add("hidden"));
+            document.getElementById(page).classList.remove("hidden");
+            window.scrollTo({ top: 0 });
+            if (page === "products") renderProducts();
+            if (page === "cart") renderCart();
+            if (page === "checkout") renderCheckout();
+        }
+
+        function showProducts(category) {
+            showPage("products");
+            setTimeout(() => {
+                document.getElementById(category).scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        }
+
+        // ==========================================================
+        //  CART LOGIC (localStorage)
+        // ==========================================================
+        function getCart() {
+            return JSON.parse(localStorage.getItem("humanityCart") || "[]");
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem("humanityCart", JSON.stringify(cart));
+            updateCount();
+        }
+
+        function updateCount() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById("cartCount").textContent = totalItems;
+        }
+
+        function details() {
+            const cart = getCart();
+            return cart
+                .map(x => {
+                    const p = products.find(prod => prod.id === x.id);
+                    return p ? { ...p, qty: x.qty } : null;
+                })
+                .filter(Boolean);
+        }
+
+        function total() {
+            const items = details();
+            return items.reduce((sum, x) => sum + (x.price * x.qty), 0);
+        }
+
+        // ==========================================================
+        //  RENDER PRODUCTS
+        // ==========================================================
+        function renderProducts() {
+            const box = document.getElementById("productsContainer");
+            box.innerHTML = "";
+            Object.keys(categories).forEach(cat => {
+                const items = products.filter(p => p.category === cat);
+                const sec = document.createElement("section");
+                sec.className = "product-section";
+                sec.id = cat;
+                let html = `<h2>${categories[cat]}</h2><div class="product-grid">`;
+                items.forEach(p => {
+                    const qty = quantities[p.id] || 1;
+                    html += `
+                        <div class="product">
+                            <div class="product-icon">${p.icon}</div>
+                            <h3>${p.name}</h3>
+                            <div class="price">${p.price} USDT / ${p.unit}</div>
+                            <div class="quantity">
+                                <button onclick="changeQty('${p.id}',-1)">−</button>
+                                <strong id="qty-${p.id}">${qty}</strong>
+                                <button onclick="changeQty('${p.id}',1)">+</button>
+                            </div>
+                            <button class="add" onclick="addProduct('${p.id}')">❤️ Add to Cart</button>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+                sec.innerHTML = html;
+                box.appendChild(sec);
+            });
+        }
+
+        function changeQty(id, n) {
+            quantities[id] = Math.max(1, (quantities[id] || 1) + n);
+            document.getElementById("qty-" + id).textContent = quantities[id];
+        }
+
+        function addProduct(id) {
+            const cart = getCart();
+            const q = quantities[id] || 1;
+            const existing = cart.find(x => x.id === id);
+            if (existing) {
+                existing.qty += q;
+            } else {
+                cart.push({ id, qty: q });
+            }
+            saveCart(cart);
+            showToast("✅ Added to cart!");
+        }
+
+        // ==========================================================
+        //  RENDER CART
+        // ==========================================================
+        function renderCart() {
+            const box = document.getElementById("cartContainer");
+            const items = details();
+            if (!items.length) {
+                box.innerHTML = `
+                    <div class="empty">
+                        <h2>Your cart is empty</h2>
+                        <button class="btn primary" onclick="showPage('products')">Explore Needs</button>
+                    </div>
+                `;
+                return;
+            }
+            let html = "";
+            items.forEach(x => {
+                html += `
+                    <div class="cart-row">
+                        <div>
+                            <strong>${x.icon} ${x.name}</strong><br>
+                            <small>${x.price} USDT × ${x.qty}</small>
+                        </div>
+                        <div class="quantity">
+                            <button onclick="cartQty('${x.id}',-1)">−</button>
+                            <strong>${x.qty}</strong>
+                            <button onclick="cartQty('${x.id}',1)">+</button>
+                        </div>
+                        <strong>${(x.price * x.qty).toFixed(2)} USDT</strong>
+                        <button class="remove" onclick="removeItem('${x.id}')">🗑️</button>
+                    </div>
+                `;
+            });
+            html += `
+                <div class="total">Total: <strong>${total().toFixed(2)} USDT</strong></div>
+                <button class="btn primary continue" onclick="showPage('checkout')">Proceed to Checkout →</button>
+            `;
+            box.innerHTML = html;
+        }
+
+        function cartQty(id, n) {
+            const cart = getCart();
+            const item = cart.find(x => x.id === id);
+            if (!item) return;
+            item.qty += n;
+            if (item.qty <= 0) {
+                const idx = cart.indexOf(item);
+                cart.splice(idx, 1);
+            }
+            saveCart(cart);
+            renderCart();
+        }
+
+        function removeItem(id) {
+            let cart = getCart();
+            cart = cart.filter(x => x.id !== id);
+            saveCart(cart);
+            renderCart();
+        }
+
+        // ==========================================================
+        //  CHECKOUT & PAYMENT
+        // ==========================================================
+        async function renderCheckout() {
+            const items = details();
+            const totalAmount = total();
+            document.getElementById("checkoutTotal").textContent = totalAmount.toFixed(2) + " USDT";
+            const summaryDiv = document.getElementById("checkoutItems");
+            if (!items.length) {
+                summaryDiv.innerHTML = "<p>Cart is empty.</p>";
+                document.getElementById('paymentButton').style.display = 'none';
+                return;
+            }
+            summaryDiv.innerHTML = items
+                .map(x => `
+                    <p>${x.icon} ${x.name} × ${x.qty}
+                        <strong style="float:right">${(x.price * x.qty).toFixed(2)} USDT</strong>
+                    </p>
+                `)
+                .join("");
+
+            const payBtn = document.getElementById('paymentButton');
+            payBtn.style.display = 'block';
+            payBtn.textContent = '⏳ Preparing...';
+            payBtn.disabled = true;
+            payBtn.style.opacity = '0.7';
+
+            try {
+                const response = await fetch('/api/create-invoice', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount: totalAmount,
+                        items: items.map(i => `${i.name} × ${i.qty}`),
+                        orderId: 'HUMANITY_' + Date.now()
+                    })
+                });
+                const data = await response.json();
+                if (data.invoice_url) {
+                    payBtn.textContent = '💳 Go to Secure Payment';
+                    payBtn.disabled = false;
+                    payBtn.style.opacity = '1';
+                    payBtn.onclick = function() {
+                        window.open(data.invoice_url, '_blank');
+                    };
+                } else {
+                    payBtn.textContent = '⚠️ Error, please try again';
+                    payBtn.disabled = false;
+                    payBtn.style.opacity = '1';
+                }
+            } catch (e) {
+                payBtn.textContent = '⚠️ Could not connect to server';
+                payBtn.disabled = false;
+                payBtn.style.opacity = '1';
+                console.error(e);
+            }
+        }
+
+        // ==========================================================
+        //  INIT
+        // ==========================================================
+        updateCount();
+
+        // If user returns from payment with success/cancel
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('payment') === 'success') {
+                showToast("✅ Thank you! Your donation was successful ❤️");
+                // Optionally clear cart: localStorage.removeItem("humanityCart"); updateCount();
+            } else if (params.get('payment') === 'cancel') {
+                showToast("❌ Payment was cancelled.");
+            }
+        };
+    </script>
+</body>
+  </html>
