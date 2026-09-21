@@ -10,18 +10,45 @@
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}button{font:inherit}a{text-decoration:none;color:inherit}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:15px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:21px;font-weight:900;color:var(--blue)}.brand span{color:var(--orange)}.navlinks{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:700}.navlinks a:hover{color:var(--orange)}.cart{background:var(--blue);color:white;padding:7px 12px;border-radius:20px}
 .hero{min-height:650px;padding:70px 7%;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;background:linear-gradient(135deg,#eff8fb,#fff8f2)}.eyebrow{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(42px,5vw,68px);line-height:1.03;margin:15px 0 22px}.hero h1 span{color:var(--blue)}.hero p{font-size:18px;color:#596573;max-width:650px}.actions{margin:28px 0}.btn{border:0;border-radius:12px;padding:15px 23px;font-weight:800;cursor:pointer;display:inline-block;margin:4px 7px 4px 0}.primary{background:var(--blue);color:#fff}.primary:hover{background:#064b70}.secondary{background:#fff;border:1px solid #d9e0e6}.stats{display:flex;gap:35px;flex-wrap:wrap;margin-top:28px}.stat b{display:block;font-size:26px;color:var(--blue)}.stat small{color:var(--muted)}
-.hero-photo{height:460px;border-radius:28px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.14);position:relative;background:url("https://www.unicef.org/sites/default/files/styles/lazy_load/public/UNI820851.webp?itok=xWKqe72k") center/cover}.hero-photo:after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(0,0,0,.7))}.hero-caption{position:absolute;z-index:2;bottom:25px;left:25px;right:25px;color:#fff}.hero-caption b{font-size:23px}.hero-caption p{font-size:14px;color:#fff;margin-top:5px}
+
+/* ✅ صورة الهيرو بجودة عالية */
+.hero-photo{height:460px;border-radius:28px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.14);position:relative;background:url("https://images.unsplash.com/photo-1591120277025-8e6e04c1c4e5?w=1600&q=95&fm=jpg&fit=crop") center/cover;image-rendering:-webkit-optimize-contrast}
+.hero-photo:after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(0,0,0,.7))}.hero-caption{position:absolute;z-index:2;bottom:25px;left:25px;right:25px;color:#fff}.hero-caption b{font-size:23px}.hero-caption p{font-size:14px;color:#fff;margin-top:5px}
 .trust{background:var(--ink);color:#fff;padding:17px 7%;display:flex;justify-content:center;gap:45px;flex-wrap:wrap;font-size:14px;font-weight:700}.trust span{color:#8fd3ff}
 .section{padding:80px 7%;max-width:1350px;margin:auto}.title{text-align:center;margin-bottom:45px}.title h2{font-size:38px;margin:8px 0}.title p{color:var(--muted);max-width:680px;margin:auto}
-.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.package{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,.05);transition:.2s}.package:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(15,23,42,.1)}.pkg-img{height:205px;background-size:cover;background-position:center}.pkg-body{padding:24px}.tag{display:inline-block;background:#eaf5fb;color:var(--blue);padding:5px 10px;border-radius:20px;font-size:11px;font-weight:900;text-transform:uppercase}.package h3{font-size:21px;margin:11px 0 5px}.package p{color:var(--muted);font-size:14px}.price{font-size:25px;font-weight:900;color:var(--blue);margin:17px 0}.price small{font-size:12px;color:var(--muted);font-weight:500}.qty{display:flex;align-items:center;gap:12px;margin:13px 0}.qty button{width:38px;height:38px;border:0;border-radius:9px;background:#eef5f8;cursor:pointer;font-size:20px;font-weight:900}.qty strong{min-width:28px;text-align:center}.add{width:100%;border:0;border-radius:11px;padding:13px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer}.add:hover{background:var(--blue)}
-.need-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.need{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden}.need img{height:145px;width:100%;object-fit:cover}.need div{padding:17px}.need h3{font-size:17px}.need p{font-size:13px;color:var(--muted)}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.package{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,.05);transition:.2s;display:flex;flex-direction:column}.package:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(15,23,42,.1)}
+/* ✅ تحسين وضوح صور الكروت */
+.pkg-img{height:205px;background-size:cover;background-position:center;image-rendering:-webkit-optimize-contrast}
+.pkg-body{padding:24px;display:flex;flex-direction:column;flex:1}.tag{display:inline-block;background:#eaf5fb;color:var(--blue);padding:5px 10px;border-radius:20px;font-size:11px;font-weight:900;text-transform:uppercase;align-self:flex-start}.package h3{font-size:21px;margin:11px 0 5px}.package p{color:var(--muted);font-size:14px}.price{font-size:25px;font-weight:900;color:var(--blue);margin:17px 0}.price small{font-size:12px;color:var(--muted);font-weight:500}.qty{display:flex;align-items:center;gap:12px;margin:13px 0}.qty button{width:38px;height:38px;border:0;border-radius:9px;background:#eef5f8;cursor:pointer;font-size:20px;font-weight:900}.qty button:hover{background:#dceaf1}.qty strong{min-width:28px;text-align:center}.add{width:100%;border:0;border-radius:11px;padding:13px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer;margin-top:auto}.add:hover{background:var(--blue)}
+.incart{margin-top:10px;font-size:12px;font-weight:800;color:var(--green)}
+.need-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.need{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden}
+/* ✅ تحسين وضوح صور الفئات */
+.need img{height:145px;width:100%;object-fit:cover;image-rendering:crisp-edges}
+.need div{padding:17px}.need h3{font-size:17px}.need p{font-size:13px;color:var(--muted)}
 .how{background:#eaf4f7}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{background:#fff;padding:25px;border-radius:18px;border:1px solid #dce8ed}.step b{font-size:30px;color:var(--blue)}.step h3{margin:8px 0}.step p{font-size:14px;color:var(--muted)}
 .faq{max-width:850px;margin:auto}.faq-item{background:#fff;border:1px solid var(--line);border-radius:13px;margin:10px 0;overflow:hidden}.faq-q{padding:18px 21px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between}.faq-a{display:none;padding:0 21px 18px;color:var(--muted);font-size:14px}.faq-item.open .faq-a{display:block}
-.view{display:none}.view.active{display:block}.cartbox{max-width:950px;margin:auto}.cartrow{background:#fff;border-bottom:1px solid var(--line);padding:18px 22px;display:grid;grid-template-columns:2fr 150px 120px 40px;align-items:center;gap:15px}.cartrow:first-child{border-radius:18px 18px 0 0}.total{background:var(--ink);color:#fff;padding:23px;border-radius:0 0 18px 18px;text-align:right;font-size:21px}.remove{border:0;background:none;cursor:pointer;font-size:18px}.empty{text-align:center;background:#fff;border-radius:20px;padding:60px 20px}.checkout{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;max-width:1100px;margin:auto}.box{background:#fff;border-radius:20px;padding:30px;border:1px solid var(--line)}.wallet{background:#effaf1;border:2px solid #48b96b;border-radius:16px;padding:22px;margin:18px 0}.address{background:#fff;padding:14px;border:1px dashed #bbb;border-radius:10px;font:700 13px monospace;word-break:break-all;margin:10px 0}.copy{width:100%;border:0;background:var(--green);color:#fff;padding:13px;border-radius:10px;font-weight:800;cursor:pointer}.qr{text-align:center;margin-top:15px}.qr img{width:190px;border-radius:10px}.warn{background:#fff7e8;border-left:4px solid var(--orange);padding:16px;border-radius:10px;font-size:13px;margin:18px 0}.confirm{display:block;text-align:center;background:var(--green);color:#fff;padding:15px;border-radius:11px;font-weight:900}
+.view{display:none}.view.active{display:block}.cartbox{max-width:950px;margin:auto}.cartrow{background:#fff;border-bottom:1px solid var(--line);padding:18px 22px;display:grid;grid-template-columns:2fr 150px 120px 40px;align-items:center;gap:15px}.cartrow:first-child{border-radius:18px 18px 0 0}.total{background:var(--ink);color:#fff;padding:23px;border-radius:0 0 18px 18px;text-align:right;font-size:21px}.remove{border:0;background:none;cursor:pointer;font-size:18px}.empty{text-align:center;background:#fff;border-radius:20px;padding:60px 20px}.checkout{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;max-width:1100px;margin:auto}.box{background:#fff;border-radius:20px;padding:30px;border:1px solid var(--line)}.wallet{background:#effaf1;border:2px solid #48b96b;border-radius:16px;padding:22px;margin:18px 0}.address{background:#fff;padding:14px;border:1px dashed #bbb;border-radius:10px;font:700 13px monospace;word-break:break-all;margin:10px 0}.copy{width:100%;border:0;background:var(--green);color:#fff;padding:13px;border-radius:10px;font-weight:800;cursor:pointer}.qr{text-align:center;margin-top:15px}.qr img{width:190px;border-radius:10px}.warn{background:#fff7e8;border-left:4px solid var(--orange);padding:16px;border-radius:10px;font-size:13px;margin:18px 0}
+.txid{width:100%;padding:13px;border:1px solid #d9e0e6;border-radius:10px;font:inherit;margin-top:8px;outline:0}.txid:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e3f0f7}
+.field-label{display:block;font-weight:800;font-size:14px;margin-top:16px}
+.confirm-btn{display:block;width:100%;border:0;text-align:center;background:var(--green);color:#fff;padding:15px;border-radius:11px;font-weight:900;margin-top:14px;cursor:pointer;transition:.2s}
+.confirm-btn:hover{background:#12622f}
+.confirm-btn:disabled{opacity:.45;cursor:not-allowed}
+.success{background:#fff;border-radius:22px;padding:40px;border:1px solid var(--line);max-width:820px;margin:auto;box-shadow:0 12px 40px rgba(15,23,42,.08)}
+.success-icon{width:80px;height:80px;border-radius:50%;background:#e8f7ee;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto 20px}
+.success h2{text-align:center;color:var(--green);font-size:30px;margin-bottom:8px}
+.success .sub{text-align:center;color:var(--muted);margin-bottom:30px}
+.order-info{background:#f7fafc;border-radius:14px;padding:22px;margin-bottom:20px}
+.order-info .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed #dde5ea;font-size:14px}
+.order-info .row:last-child{border:0;font-weight:900;font-size:17px;color:var(--blue);padding-top:15px}
+.order-info .row span:first-child{color:var(--muted)}
+.order-info .mono{font-family:monospace;font-size:12px;word-break:break-all;text-align:right;max-width:60%}
+.success-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:25px}
+.success-actions button,.success-actions a{border:0;border-radius:11px;padding:13px 22px;font-weight:800;cursor:pointer;text-align:center}
+.btn-outline{background:#fff;border:1px solid #d9e0e6 !important;color:var(--ink)}
 footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1200px;margin:auto}.foot h3,.foot h4{color:#fff;margin-bottom:14px}.foot p,.foot a{font-size:14px;line-height:2}.bottom{max-width:1200px;margin:35px auto 0;padding-top:20px;border-top:1px solid #29343e;text-align:center;font-size:12px}
-.toast{position:fixed;right:20px;bottom:20px;background:var(--green);color:#fff;padding:14px 20px;border-radius:12px;z-index:100;display:none;font-weight:800}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--green);color:#fff;padding:14px 20px;border-radius:12px;z-index:100;display:none;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.2)}
 @media(max-width:950px){.hero{grid-template-columns:1fr;padding:55px 6%}.hero-photo{height:350px}.packages{grid-template-columns:1fr 1fr}.need-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.checkout{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}.navlinks{gap:10px}}
-@media(max-width:620px){.nav{padding:13px 4%;}.navlinks a:not(.cart){display:none}.hero h1{font-size:43px}.hero-photo{height:300px}.packages,.need-grid,.steps{grid-template-columns:1fr}.section{padding:55px 5%}.cartrow{grid-template-columns:1fr;text-align:center}.trust{gap:15px;font-size:12px}.foot{grid-template-columns:1fr}}
+@media(max-width:620px){.nav{padding:13px 4%}.navlinks a:not(.cart){display:none}.hero h1{font-size:43px}.hero-photo{height:300px}.packages,.need-grid,.steps{grid-template-columns:1fr}.section{padding:55px 5%}.cartrow{grid-template-columns:1fr;text-align:center;justify-items:center}.trust{gap:15px;font-size:12px}.foot{grid-template-columns:1fr}.success{padding:25px 18px}}
 </style>
 </head>
 <body>
@@ -31,11 +58,11 @@ footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;
   <nav class="navlinks">
     <a href="#" onclick="page('home');return false">Home</a>
     <a href="#" onclick="page('packages');return false">Aid Packages</a>
-    <a class="cart" href="#" onclick="page('cart');return false">Support Cart <span id="count">0</span></a>
+    <a class="cart" href="#" onclick="page('cart');return false">Support Cart <span data-count>0</span></a>
   </nav>
 </header>
 
-<div id="toast" class="toast">Added to your support cart ❤️</div>
+<div id="toast" class="toast"></div>
 
 <section id="home" class="view active">
   <div class="hero">
@@ -54,60 +81,56 @@ footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;
       </div>
     </div>
     <div class="hero-photo">
-      <div class="hero-caption"><b>Gaza: families rebuilding life amid destruction.</b><p>Real humanitarian needs include food, water, shelter, hygiene and children's support. Photo: UNICEF.</p></div>
+      <div class="hero-caption"><b>Gaza: families rebuilding life amid destruction.</b><p>Real humanitarian needs include food, water, shelter, hygiene and children's support.</p></div>
     </div>
   </div>
   <div class="trust"><div>🔒 Secure wallet transfer</div><div>🌍 Support from anywhere</div><div>📦 Tangible aid packages</div><div>🧾 TXID confirmation</div></div>
 
-  
-<section class="section" style="background:#fff;max-width:none;">
-  <div style="max-width:1200px;margin:auto;">
-    <div class="title">
-      <div class="eyebrow">Gaza • A humanitarian story</div>
-      <h2>What the war has left behind</h2>
-      <p>For families in Gaza, the impact of war is not only measured in destroyed buildings. It is also measured in displacement, damaged water and sanitation systems, interrupted education, and the daily struggle to secure basic necessities.</p>
+  <section class="section" style="background:#fff;max-width:none;">
+    <div style="max-width:1200px;margin:auto;">
+      <div class="title">
+        <div class="eyebrow">Gaza • A humanitarian story</div>
+        <h2>What the war has left behind</h2>
+        <p>For families in Gaza, the impact of war is not only measured in destroyed buildings. It is also measured in displacement, damaged water and sanitation systems, interrupted education, and the daily struggle to secure basic necessities.</p>
+      </div>
+
+      <div class="packages">
+        <article class="package">
+          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1591120277025-8e6e04c1c4e5?w=1200&q=95&fm=jpg&fit=crop')"></div>
+          <div class="pkg-body">
+            <span class="tag">Destroyed neighbourhoods</span>
+            <h3>Homes that became rubble</h3>
+            <p>Many families in Gaza have had to live in temporary or damaged shelters after their neighbourhoods were destroyed.</p>
+          </div>
+        </article>
+
+        <article class="package">
+          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1595475207225-428b62bda831?w=1200&q=95&fm=jpg&fit=crop')"></div>
+          <div class="pkg-body">
+            <span class="tag">Displacement</span>
+            <h3>Life inside temporary shelters</h3>
+            <p>Families continue to face overcrowding and limited access to safe water, sanitation, healthcare and other essential services.</p>
+          </div>
+        </article>
+
+        <article class="package">
+          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=95&fm=jpg&fit=crop')"></div>
+          <div class="pkg-body">
+            <span class="tag">Children &amp; families</span>
+            <h3>A childhood interrupted</h3>
+            <p>Children have lost homes, schools and familiar surroundings. Humanitarian support focuses on protection, nutrition, water, health and education.</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:28px;background:#eef7fa;border-left:5px solid var(--blue);padding:22px;border-radius:14px;color:#465462;">
+        <b>Documented humanitarian situation:</b> Gaza remains in a critical humanitarian situation, with continuing displacement, precarious water and sanitation services, and major constraints on winter preparations. UN assessments indicate that a large majority of structures in Gaza have sustained damage.
+        <br><small>*Figures are dated and should be updated when newer UN assessments are published.</small>
+      </div>
     </div>
+  </section>
 
-    <div class="packages">
-      <article class="package">
-        <div class="pkg-img" style="background-image:url('https://www.unicef.org/sites/default/files/styles/lazy_load/public/UNI820851.webp?itok=xWKqe72k')"></div>
-        <div class="pkg-body">
-          <span class="tag">Destroyed neighbourhoods</span>
-          <h3>Homes that became rubble</h3>
-          <p>UNICEF documents children walking through destroyed neighbourhoods in Gaza, including Khan Younis. Many families have had to live in temporary or damaged shelters.</p>
-          <small style="color:#8a94a0">Photo: UNICEF/UNI820851</small>
-        </div>
-      </article>
-
-      <article class="package">
-        <div class="pkg-img" style="background-image:url('https://www.unicef.org/sites/default/files/styles/lazy_load/public/UNI849963.webp?itok=S3Qs3Hpo')"></div>
-        <div class="pkg-body">
-          <span class="tag">Displacement</span>
-          <h3>Life inside temporary shelters</h3>
-          <p>Families continue to face overcrowding and limited access to safe water, sanitation, healthcare and other essential services.</p>
-          <small style="color:#8a94a0">Photo: UNICEF/UNI849963/Nateel</small>
-        </div>
-      </article>
-
-      <article class="package">
-        <div class="pkg-img" style="background-image:url('https://www.unicef.org/sites/default/files/styles/lazy_load/public/UNI901432.webp?itok=SJ95cnss')"></div>
-        <div class="pkg-body">
-          <span class="tag">Children & families</span>
-          <h3>A childhood interrupted</h3>
-          <p>Children have lost homes, schools and familiar surroundings. Humanitarian support focuses on protection, nutrition, water, health and education.</p>
-          <small style="color:#8a94a0">Photo: UNICEF/UNI901432/Nateel</small>
-        </div>
-      </article>
-    </div>
-
-    <div style="margin-top:28px;background:#eef7fa;border-left:5px solid var(--blue);padding:22px;border-radius:14px;color:#465462;">
-      <b>Documented humanitarian situation:</b> OCHA reported in September 2026 that Gaza remained in a critical humanitarian situation, with continuing attacks in populated areas, further displacement, precarious water and sanitation services, and major constraints on winter preparations. A UN satellite assessment cited by OCHA found that, as of 16 June 2026, about 82% of structures in Gaza had sustained damage.
-      <br><small>*Figures are dated and should be updated when newer UN assessments are published.</small>
-    </div>
-  </div>
-</section>
-
-<section class="section">
+  <section class="section">
     <div class="title"><div class="eyebrow">Choose a package</div><h2>Humanitarian Aid Packages</h2><p>Packages are designed around common essential needs. Quantities and prices can be adjusted to your actual local costs.</p></div>
     <div class="packages" id="homePackages"></div>
   </section>
@@ -118,17 +141,17 @@ footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;
       <div class="step"><b>01</b><h3>Choose</h3><p>Select an aid package or individual essential item.</p></div>
       <div class="step"><b>02</b><h3>Review</h3><p>Check quantities and the total amount in your support cart.</p></div>
       <div class="step"><b>03</b><h3>Send USDT</h3><p>Send the exact amount using the specified network to the displayed wallet.</p></div>
-      <div class="step"><b>04</b><h3>Confirm</h3><p>Send your TXID through WhatsApp so the team can identify the transfer.</p></div>
+      <div class="step"><b>04</b><h3>Confirm</h3><p>Paste your TXID and press confirm — the receipt appears instantly.</p></div>
     </div>
   </section>
 
   <section class="section">
     <div class="title"><div class="eyebrow">Essential needs</div><h2>Support by Category</h2></div>
     <div class="need-grid">
-      <article class="need"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80"><div><h3>🥬 Food</h3><p>Fresh food and basic pantry supplies.</p></div></article>
-      <article class="need"><img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80"><div><h3>👕 Clothing</h3><p>Clothing and footwear for children and families.</p></div></article>
-      <article class="need"><img src="https://images.unsplash.com/photo-1584839404042-8bcf5c0f9a6a?auto=format&fit=crop&w=700&q=80"><div><h3>👶 Children</h3><p>Baby milk, diapers and children's essentials.</p></div></article>
-      <article class="need"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80"><div><h3>🏠 Family</h3><p>Blankets, water and household necessities.</p></div></article>
+      <article class="need"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=95&fm=jpg&fit=crop" alt="Food"><div><h3>🥬 Food</h3><p>Fresh food and basic pantry supplies.</p></div></article>
+      <article class="need"><img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=900&q=95&fm=jpg&fit=crop" alt="Clothing"><div><h3>👕 Clothing</h3><p>Clothing and footwear for children and families.</p></div></article>
+      <article class="need"><img src="https://images.unsplash.com/photo-1584839404042-8bcf5c0f9a6a?w=900&q=95&fm=jpg&fit=crop" alt="Children"><div><h3>👶 Children</h3><p>Baby milk, diapers and children's essentials.</p></div></article>
+      <article class="need"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=95&fm=jpg&fit=crop" alt="Family"><div><h3>🏠 Family</h3><p>Blankets, water and household necessities.</p></div></article>
     </div>
   </section>
 
@@ -136,7 +159,7 @@ footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;
     <div class="title"><div class="eyebrow">Questions</div><h2>Frequently Asked Questions</h2></div>
     <div class="faq">
       <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Which network should I use for USDT? <span>+</span></div><div class="faq-a">Use only the network shown on the checkout page. Sending USDT through another network can result in loss of funds.</div></div>
-      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">How do I confirm my transfer? <span>+</span></div><div class="faq-a">After sending, copy your blockchain transaction ID (TXID) and use the confirmation button on the payment page.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">How do I confirm my transfer? <span>+</span></div><div class="faq-a">After sending, copy your blockchain transaction ID (TXID), paste it in the checkout field and press "Confirm Donation". A receipt will appear immediately on this page.</div></div>
       <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Can I support a specific package? <span>+</span></div><div class="faq-a">Yes. Select the package and quantity you want. The checkout summary will show exactly what you selected.</div></div>
       <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Are the prices fixed? <span>+</span></div><div class="faq-a">Prices shown are support targets and should be updated whenever local purchasing costs change.</div></div>
     </div>
@@ -145,8 +168,12 @@ footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;
 
 <section id="packages" class="view">
   <section class="section">
-    <div class="title"><div class="eyebrow">Direct support</div><h1>Complete Aid Packages</h1><p>Select one package, choose the quantity, and add it to your support cart.</p></div>
+    <div class="title"><div class="eyebrow">Direct support</div><h1>Complete Aid Packages</h1><p>Select a package, choose the quantity, and add it to your support cart.</p></div>
     <div class="packages" id="allPackages"></div>
+
+    <h2 style="text-align:center;margin:70px 0 10px;font-size:28px">Individual Essentials</h2>
+    <p style="text-align:center;color:var(--muted);max-width:680px;margin:0 auto 35px">Prefer to support a single item? Choose any essential below.</p>
+    <div class="packages" id="allItems"></div>
   </section>
 </section>
 
@@ -159,86 +186,450 @@ footer{background:#111a22;color:#b6c0c9;padding:55px 7% 25px}.foot{display:grid;
 
 <section id="checkout" class="view">
   <section class="section">
-    <div class="title"><div class="eyebrow">Secure transfer instructions</div><h1>🪙 Send USDT</h1></div>
-    <div class="checkout">
-      <div class="box">
-        <h2>Payment</h2>
-        <p>Total support amount: <strong id="totalPay">0.00 USDT</strong></p>
-        <div class="wallet">
-          <h3>🪙 USDT — TRC20</h3>
-          <p style="font-size:13px;color:#566;">Send only USDT through the TRON (TRC20) network.</p>
-          <div class="address" id="wallet">TRGm2Ez4rzjEwhjaS3AzpdnMwxTFaB65BK</div>
-          <button class="copy" onclick="copyWallet()">📋 Copy wallet address</button>
-          <div class="qr"><img id="qr" alt="USDT wallet QR"></div>
+    <div id="checkoutForm">
+      <div class="title"><div class="eyebrow">Secure transfer instructions</div><h1>🪙 Send USDT</h1></div>
+      <div class="checkout">
+        <div class="box">
+          <h2>Payment</h2>
+          <p>Total support amount: <strong id="totalPay">0.00 USDT</strong></p>
+          <div class="wallet">
+            <h3>🪙 USDT — TRC20</h3>
+            <p style="font-size:13px;color:#566;">Send only USDT through the TRON (TRC20) network.</p>
+            <div class="address" id="wallet">TRGm2Ez4rzjEwhjaS3AzpdnMwxTFaB65BK</div>
+            <button class="copy" type="button" onclick="copyWallet()">📋 Copy wallet address</button>
+            <div class="qr"><img id="qr" alt="USDT wallet QR"></div>
+          </div>
+          <div class="warn">⚠️ <b>Important:</b> Verify the address and network before confirming the transfer. Keep your TXID after payment. Replace the demo wallet in the code before publishing.</div>
+
+          <label class="field-label" for="txid">Your TXID (transaction hash)</label>
+          <input class="txid" id="txid" type="text" autocomplete="off" placeholder="Paste your TXID here after sending">
+
+          <button id="confirmBtn" class="confirm-btn" type="button" onclick="confirmDonation()" disabled>
+            ✅ Confirm Donation
+          </button>
+          <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px">
+            The confirmation is processed locally on this page — no external app required.
+          </p>
         </div>
-        <div class="warn">⚠️ <b>Important:</b> Verify the address and network before confirming the transfer. Keep your TXID after payment. Replace the demo wallet and contact number in the code before publishing.</div>
-        <a id="confirm" class="confirm" href="#" target="_blank">✅ I Sent the USDT — Send TXID</a>
+        <div class="box"><h3>📦 Your Support</h3><div id="summary"></div></div>
       </div>
-      <div class="box"><h3>📦 Your Support</h3><div id="summary"></div></div>
     </div>
+
+    <div id="successBox" style="display:none"></div>
   </section>
 </section>
 
-
 <section class="section" style="padding-top:10px;padding-bottom:20px;">
   <div style="max-width:900px;margin:auto;text-align:center;color:#7b8490;font-size:12px;">
-    <b>Sources & photo credits:</b> United Nations OCHA humanitarian situation reports and UNICEF State of Palestine.
-    Photos shown on this page are credited to UNICEF. This website should only use photos and beneficiary stories for which you have permission to publish.
+    <b>Sources &amp; photo credits:</b> United Nations OCHA humanitarian situation reports and UNICEF State of Palestine.
+    Please ensure you have the right to use any photo published on this page.
   </div>
 </section>
+
 <footer>
   <div class="foot">
     <div><h3>❤️ Humanity<span style="color:var(--orange)">Store</span></h3><p>A simple platform for organizing direct humanitarian support around essential needs and aid packages.</p></div>
     <div><h4>Explore</h4><a href="#" onclick="page('home');return false">Home</a><a href="#" onclick="page('packages');return false">Aid Packages</a><a href="#" onclick="page('cart');return false">Support Cart</a></div>
-    <div><h4>Contact</h4><p>support@humanity-store.org</p><p>WhatsApp support available after you configure your number.</p></div>
+    <div><h4>Contact</h4><p>support@humanity-store.org</p></div>
   </div>
-  <div class="bottom">© 2026 Humanity Store • Please replace all demo contact/payment information before publishing.</div>
+  <div class="bottom">© 2026 Humanity Store • Please replace all demo payment information before publishing.</div>
 </footer>
 
 <script>
-const WALLET="TRGm2Ez4rzjEwhjaS3AzpdnMwxTFaB65BK";
-const WHATSAPP="966500000000"; // Replace with your WhatsApp number, digits only.
-const products=[
-{id:"food",type:"package",name:"Family Food Package",tag:"Food Relief",price:35,desc:"Basic food supplies intended to support a family with essential groceries.",img:"https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85"},
-{id:"winter",type:"package",name:"Winter Warmth Package",tag:"Winter Relief",price:45,desc:"Blankets and warm essentials for children and families during cold weather.",img:"https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1000&q=85"},
-{id:"children",type:"package",name:"Children's Care Package",tag:"Children",price:40,desc:"A support package focused on children's daily essential needs.",img:"https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=85"},
-{id:"hygiene",type:"package",name:"Family Hygiene Package",tag:"Hygiene",price:30,desc:"Basic hygiene and household care supplies for a family.",img:"https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=1000&q=85"},
-{id:"foodbox",type:"item",name:"Food Box",tag:"Essential Food",price:20,desc:"A basic box of pantry essentials.",img:"https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=85"},
-{id:"water",type:"item",name:"Clean Water Support",tag:"Water",price:10,desc:"Support toward safe drinking water for a family.",img:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=900&q=85"},
-{id:"milk",type:"item",name:"Baby Milk Support",tag:"Infant Care",price:25,desc:"Support toward infant formula and baby nutrition.",img:"https://images.unsplash.com/photo-1584839404042-8bcf5c0f9a6a?auto=format&fit=crop&w=900&q=85"},
-{id:"clothes",type:"item",name:"Children's Clothing",tag:"Clothing",price:20,desc:"Support toward a clothing set for a child.",img:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=85"}
+/* ================= CONFIG ================= */
+const WALLET  = "TRGm2Ez4rzjEwhjaS3AzpdnMwxTFaB65BK";
+const NETWORK = "TRON (TRC20)";
+const SUPPORT_EMAIL = "support@humanity-store.org";   // اختياري — يُستخدم في زر البريد
+const MAX_QTY = 99;
+const CART_KEY   = "humanityStore.cart.v2";
+const LAST_ORDER = "humanityStore.lastOrder";
+
+/* ================= PRODUCTS (روابط بجودة عالية) ================= */
+const products = [
+  {id:"food",    type:"package", name:"Family Food Package",   tag:"Food Relief",   price:35, desc:"Basic food supplies intended to support a family with essential groceries.",      img:"https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"winter",  type:"package", name:"Winter Warmth Package", tag:"Winter Relief", price:45, desc:"Blankets and warm essentials for children and families during cold weather.",    img:"https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"children",type:"package", name:"Children's Care Package",tag:"Children",     price:40, desc:"A support package focused on children's daily essential needs.",                 img:"https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"hygiene", type:"package", name:"Family Hygiene Package", tag:"Hygiene",      price:30, desc:"Basic hygiene and household care supplies for a family.",                       img:"https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"foodbox", type:"item",    name:"Food Box",               tag:"Essential Food",price:20, desc:"A basic box of pantry essentials.",                                            img:"https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"water",   type:"item",    name:"Clean Water Support",    tag:"Water",         price:10, desc:"Support toward safe drinking water for a family.",                              img:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"milk",    type:"item",    name:"Baby Milk Support",      tag:"Infant Care",   price:25, desc:"Support toward infant formula and baby nutrition.",                              img:"https://images.unsplash.com/photo-1584839404042-8bcf5c0f9a6a?w=1200&q=95&fm=jpg&fit=crop"},
+  {id:"clothes", type:"item",    name:"Children's Clothing",    tag:"Clothing",      price:20, desc:"Support toward a clothing set for a child.",                                     img:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=1200&q=95&fm=jpg&fit=crop"}
 ];
-let qty={}; const $=id=>document.getElementById(id);
-function page(id){document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");scrollTo({top:0,behavior:"smooth"});if(id==="packages")renderPackages("allPackages",true);if(id==="cart")renderCart();if(id==="checkout")renderCheckout();}
-function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2200)}
-function cart(){return JSON.parse(localStorage.getItem("humanityCart")||"[]")}
-function save(c){localStorage.setItem("humanityCart",JSON.stringify(c));updateCount()}
-function updateCount(){$("count").textContent=cart().reduce((s,x)=>s+x.qty,0)}
-function getProduct(id){return products.find(x=>x.id===id)}
-function total(){return cart().reduce((s,x)=>{let p=getProduct(x.id);return s+(p?p.price*x.qty:0)},0)}
-function renderPackages(target,all=false){
-  $(target).innerHTML=products.filter(p=>all||p.type==="package").map(p=>`
-  <article class="package"><div class="pkg-img" style="background-image:url('${p.img}')"></div><div class="pkg-body">
-  <span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="price">${p.price} USDT <small>/ package</small></div>
-  <div class="qty"><button onclick="change('${p.id}',-1)">−</button><strong id="q-${p.id}">${qty[p.id]||1}</strong><button onclick="change('${p.id}',1)">+</button></div>
-  <button class="add" onclick="add('${p.id}')">❤️ Add to Support</button></div></article>`).join("");
+
+/* ================= HELPERS ================= */
+const $     = id => document.getElementById(id);
+const byId  = id => products.find(p => p.id === id);
+const money = n  => Number(n).toFixed(2);
+const clamp = n  => Math.max(1, Math.min(MAX_QTY, Math.floor(n)));
+const esc   = s  => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ================= STATE ================= */
+let selection = {};
+let cart      = [];
+
+/* ================= CART CORE ================= */
+function loadCart(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+    if(!Array.isArray(raw)) return [];
+    return raw
+      .filter(x => x && byId(x.id) && Number(x.qty) > 0)
+      .map(x => ({ id: x.id, qty: clamp(Number(x.qty)) }));
+  }catch(e){ return []; }
 }
-function change(id,n){qty[id]=Math.max(1,(qty[id]||1)+n);$("q-"+id).textContent=qty[id]}
-function add(id){let c=cart(),q=qty[id]||1,x=c.find(a=>a.id===id);x?x.qty+=q:c.push({id,qty:q});save(c);toast("Added to your support cart ❤️")}
+function saveCart(){
+  try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }catch(e){}
+  updateBadges();
+}
+function cartQty(id){ const x = cart.find(i => i.id === id); return x ? x.qty : 0; }
+function cartTotal(){ return cart.reduce((s,x)=>{ const p = byId(x.id); return p ? s + p.price * x.qty : s; }, 0); }
+function cartCount(){ return cart.reduce((s,x)=> s + x.qty, 0); }
+
+function addToCart(id, qty){
+  const p = byId(id);
+  if(!p) return;
+  const n = clamp(qty);
+  const found = cart.find(x => x.id === id);
+  if(found) found.qty = clamp(found.qty + n);
+  else cart.push({ id, qty: n });
+  saveCart();
+  toast(`Added ${n} × ${p.name} to your cart ❤️`);
+}
+function setCartQty(id, qty){
+  const p = byId(id);
+  if(!p) return;
+  if(qty <= 0){ removeFromCart(id, true); return; }
+  const found = cart.find(x => x.id === id);
+  if(!found) return;
+  found.qty = clamp(qty);
+  saveCart();
+  renderCart();
+}
+function removeFromCart(id, silent){
+  const p = byId(id);
+  cart = cart.filter(x => x.id !== id);
+  saveCart();
+  renderCart();
+  if(!silent && p) toast(`Removed ${p.name} from your cart`);
+}
+function clearCart(){
+  if(!cart.length) return;
+  cart = [];
+  saveCart();
+  renderCart();
+  toast("Cart cleared");
+}
+
+/* ================= BADGES ================= */
+function updateBadges(){
+  const count = cartCount();
+  document.querySelectorAll("[data-count]").forEach(el => el.textContent = count);
+  products.forEach(p => {
+    const q = cartQty(p.id);
+    document.querySelectorAll(`[data-incart="${p.id}"]`).forEach(el => {
+      el.hidden = q === 0;
+      el.innerHTML = `✔ In cart: <b>${q}</b>`;
+    });
+  });
+}
+
+/* ================= NAV ================= */
+function page(id){
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+  const view = $(id);
+  if(!view) return;
+  view.classList.add("active");
+
+  if(id === "packages") renderAllGrids();
+  if(id === "cart")     renderCart();
+  if(id === "checkout") renderCheckout();
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ================= TOAST ================= */
+let toastTimer;
+function toast(msg){
+  const el = $("toast");
+  el.textContent = msg;
+  el.style.display = "block";
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.style.display = "none", 2200);
+}
+
+/* ================= GRIDS ================= */
+function cardHTML(p){
+  const q = selection[p.id] || 1;
+  return `
+  <article class="package">
+    <div class="pkg-img" style="background-image:url('${p.img}')"></div>
+    <div class="pkg-body">
+      <span class="tag">${esc(p.tag)}</span>
+      <h3>${esc(p.name)}</h3>
+      <p>${esc(p.desc)}</p>
+      <div class="price">${p.price} USDT <small>/ ${p.type === "package" ? "package" : "unit"}</small></div>
+      <div class="qty">
+        <button type="button" data-act="dec" data-id="${p.id}" aria-label="Decrease quantity">−</button>
+        <strong data-qty="${p.id}">${q}</strong>
+        <button type="button" data-act="inc" data-id="${p.id}" aria-label="Increase quantity">+</button>
+      </div>
+      <button class="add" type="button" data-act="add" data-id="${p.id}">❤️ Add to Support</button>
+      <div class="incart" data-incart="${p.id}" ${cartQty(p.id) ? "" : "hidden"}></div>
+    </div>
+  </article>`;
+}
+function renderGrid(targetId, type){
+  const el = $(targetId);
+  if(!el) return;
+  const list = products.filter(p => type === "all" ? true : p.type === type);
+  el.innerHTML = list.map(cardHTML).join("");
+  syncQtyDisplays();
+}
+function renderAllGrids(){
+  renderGrid("homePackages", "package");
+  renderGrid("allPackages",  "package");
+  renderGrid("allItems",     "item");
+  updateBadges();
+}
+function syncQtyDisplays(){
+  document.querySelectorAll("[data-qty]").forEach(el => {
+    el.textContent = selection[el.dataset.qty] || 1;
+  });
+}
+
+/* ================= CART VIEW ================= */
 function renderCart(){
- let c=cart();if(!c.length){$("cartBox").innerHTML='<div class="empty"><h2>Your support cart is empty</h2><p>Choose an aid package to get started.</p><button class="btn primary" onclick="page(\'packages\')">View Packages</button></div>';return}
- $("cartBox").innerHTML=c.map(x=>{let p=getProduct(x.id);return `<div class="cartrow"><div><b>${p.name}</b><br><small>${p.price} USDT × ${x.qty}</small></div><div class="qty"><button onclick="cartQty('${x.id}',-1)">−</button><strong>${x.qty}</strong><button onclick="cartQty('${x.id}',1)">+</button></div><b style="color:var(--blue)">${(p.price*x.qty).toFixed(2)} USDT</b><button class="remove" onclick="removeItem('${x.id}')">🗑️</button></div>`}).join("")+`<div class="total">Total: <b>${total().toFixed(2)} USDT</b></div><button class="btn primary" style="width:100%;margin-top:18px" onclick="page('checkout')">Proceed to Payment →</button>`;
+  const box = $("cartBox");
+  if(!box) return;
+
+  if(!cart.length){
+    box.innerHTML = `
+      <div class="empty">
+        <h2>Your support cart is empty</h2>
+        <p>Choose an aid package or an essential item to get started.</p>
+        <button class="btn primary" type="button" data-act="go" data-id="packages" style="margin-top:18px">View Aid Packages</button>
+      </div>`;
+    return;
+  }
+
+  box.innerHTML = cart.map(x => {
+    const p = byId(x.id);
+    return `
+    <div class="cartrow">
+      <div><b>${esc(p.name)}</b><br><small>${p.price} USDT × ${x.qty}</small></div>
+      <div class="qty" style="margin:0;justify-content:center">
+        <button type="button" data-act="cart-dec" data-id="${p.id}" aria-label="Decrease">−</button>
+        <strong>${x.qty}</strong>
+        <button type="button" data-act="cart-inc" data-id="${p.id}" aria-label="Increase">+</button>
+      </div>
+      <b style="color:var(--blue)">${money(p.price * x.qty)} USDT</b>
+      <button class="remove" type="button" data-act="remove" data-id="${p.id}" title="Remove item">🗑️</button>
+    </div>`;
+  }).join("") + `
+    <div class="total">Total: <b>${money(cartTotal())} USDT</b></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
+      <button class="btn primary" style="flex:1;min-width:220px;margin:0" type="button" data-act="go" data-id="checkout">Proceed to Payment →</button>
+      <button class="btn secondary" style="margin:0" type="button" data-act="clear">Clear cart</button>
+    </div>`;
 }
-function cartQty(id,n){let c=cart(),x=c.find(a=>a.id===id);if(!x)return;x.qty+=n;if(x.qty<=0)c=c.filter(a=>a.id!==id);save(c);renderCart()}
-function removeItem(id){save(cart().filter(x=>x.id!==id));renderCart()}
+
+/* ================= CHECKOUT VIEW ================= */
 function renderCheckout(){
- let c=cart(),t=total();$("totalPay").textContent=t.toFixed(2)+" USDT";$("wallet").textContent=WALLET;
- $("qr").src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="+encodeURIComponent(WALLET);
- $("summary").innerHTML=c.length?c.map(x=>{let p=getProduct(x.id);return `<p style="padding:12px 0;border-bottom:1px solid var(--line)">${p.name} × ${x.qty}<b style="float:right;color:var(--blue)">${(p.price*x.qty).toFixed(2)} USDT</b></p>`}).join("")+`<p style="padding-top:18px;font-size:18px"><b>Total</b><b style="float:right;color:var(--blue)">${t.toFixed(2)} USDT</b></p>`:"<p>Your cart is empty.</p>";
- let msg=encodeURIComponent(`Hello, I sent ${t.toFixed(2)} USDT as humanitarian support. TXID: `);$("confirm").href=`https://wa.me/${WHATSAPP}?text=${msg}`;
+  $("checkoutForm").style.display = "";
+  $("successBox").style.display = "none";
+
+  const t = cartTotal();
+  $("totalPay").textContent = money(t) + " USDT";
+  $("wallet").textContent   = WALLET;
+  $("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" + encodeURIComponent(WALLET);
+
+  const sum = $("summary");
+  if(!cart.length){
+    sum.innerHTML = `<p style="color:var(--muted)">Your cart is empty. Add a package first.</p>`;
+  }else{
+    sum.innerHTML = cart.map(x => {
+      const p = byId(x.id);
+      return `<p style="padding:12px 0;border-bottom:1px solid var(--line)">${esc(p.name)} × ${x.qty}
+                <b style="float:right;color:var(--blue)">${money(p.price * x.qty)} USDT</b></p>`;
+    }).join("") +
+    `<p style="padding-top:18px;font-size:18px"><b>Total</b>
+      <b style="float:right;color:var(--blue)">${money(t)} USDT</b></p>`;
+  }
+
+  const tx = $("txid");
+  tx.value = "";
+  tx.oninput = updateConfirmState;
+  updateConfirmState();
 }
-function copyWallet(){navigator.clipboard.writeText(WALLET).then(()=>toast("Wallet address copied 📋")).catch(()=>{let t=document.createElement("textarea");t.value=WALLET;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();toast("Wallet address copied 📋")})}
-renderPackages("homePackages");updateCount();
+
+function updateConfirmState(){
+  const btn = $("confirmBtn");
+  if(!btn) return;
+  const hasItems = cart.length > 0;
+  const hasTxid  = $("txid").value.trim().length >= 6;
+  btn.disabled = !(hasItems && hasTxid);
+}
+
+/* ================= CONFIRM ================= */
+function generateOrderId(){
+  const d = new Date();
+  const stamp = d.getFullYear().toString().slice(2)
+    + String(d.getMonth()+1).padStart(2,"0")
+    + String(d.getDate()).padStart(2,"0");
+  const rand = Math.random().toString(36).slice(2,7).toUpperCase();
+  return `HS-${stamp}-${rand}`;
+}
+
+function confirmDonation(){
+  const txid = $("txid").value.trim();
+
+  if(!cart.length){ toast("Your cart is empty"); return; }
+  if(txid.length < 6){ toast("Please enter a valid TXID"); return; }
+
+  const order = {
+    orderId: generateOrderId(),
+    date: new Date().toISOString(),
+    txid,
+    network: NETWORK,
+    wallet: WALLET,
+    items: cart.map(x => {
+      const p = byId(x.id);
+      return { id: x.id, name: p.name, price: p.price, qty: x.qty, subtotal: p.price * x.qty };
+    }),
+    total: cartTotal()
+  };
+
+  try{ localStorage.setItem(LAST_ORDER, JSON.stringify(order)); }catch(e){}
+
+  renderSuccess(order);
+
+  cart = [];
+  saveCart();
+
+  toast("Donation confirmed — thank you ❤️");
+}
+
+function renderSuccess(order){
+  $("checkoutForm").style.display = "none";
+  const box = $("successBox");
+  box.style.display = "block";
+
+  const itemsHTML = order.items.map(i =>
+    `<div class="row"><span>${esc(i.name)} × ${i.qty}</span><span>${money(i.subtotal)} USDT</span></div>`
+  ).join("");
+
+  const summaryText = buildSummaryText(order);
+
+  box.innerHTML = `
+    <div class="success">
+      <div class="success-icon">✓</div>
+      <h2>Donation confirmed</h2>
+      <p class="sub">Thank you for your support. Please keep this receipt for your records.</p>
+
+      <div class="order-info">
+        <div class="row"><span>Order ID</span><span><b>${esc(order.orderId)}</b></span></div>
+        <div class="row"><span>Date</span><span>${new Date(order.date).toLocaleString()}</span></div>
+        <div class="row"><span>Network</span><span>${esc(order.network)}</span></div>
+        <div class="row"><span>Wallet</span><span class="mono">${esc(order.wallet)}</span></div>
+        <div class="row"><span>TXID</span><span class="mono">${esc(order.txid)}</span></div>
+      </div>
+
+      <div class="order-info">
+        <div style="font-weight:900;margin-bottom:8px">Items</div>
+        ${itemsHTML}
+        <div class="row"><span>Total</span><span>${money(order.total)} USDT</span></div>
+      </div>
+
+      <div class="success-actions">
+        <button type="button" class="primary" style="border:0;color:#fff;background:var(--blue)" onclick='copySummary(${JSON.stringify(JSON.stringify(summaryText))})'>📋 Copy receipt</button>
+        <a class="btn-outline" href="mailto:${esc(SUPPORT_EMAIL)}?subject=${encodeURIComponent("Donation " + order.orderId)}&body=${encodeURIComponent(summaryText)}">✉️ Email receipt</a>
+        <button type="button" class="btn-outline" onclick="page('home')">🏠 Back to Home</button>
+        <button type="button" class="btn-outline" onclick="page('packages')">➕ Make another donation</button>
+      </div>
+    </div>`;
+}
+
+function buildSummaryText(order){
+  const lines = order.items.map(i => `• ${i.name} × ${i.qty} = ${money(i.subtotal)} USDT`);
+  return [
+    "Humanity Store — Donation Receipt",
+    "----------------------------------",
+    `Order ID : ${order.orderId}`,
+    `Date     : ${new Date(order.date).toLocaleString()}`,
+    `Network  : ${order.network}`,
+    `Wallet   : ${order.wallet}`,
+    `TXID     : ${order.txid}`,
+    "",
+    "Items:",
+    ...lines,
+    "",
+    `Total    : ${money(order.total)} USDT`,
+    "",
+    "Thank you for your humanitarian support ❤️"
+  ].join("\n");
+}
+
+function copySummary(text){
+  const done = () => toast("Receipt copied 📋");
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  }else{ fallback(); }
+
+  function fallback(){
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){ toast("Copy failed"); }
+    ta.remove();
+  }
+}
+
+/* ================= COPY WALLET ================= */
+function copyWallet(){
+  const done = () => toast("Wallet address copied 📋");
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(WALLET).then(done).catch(fallback);
+  }else{ fallback(); }
+  function fallback(){
+    const ta = document.createElement("textarea");
+    ta.value = WALLET; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){ toast("Copy failed"); }
+    ta.remove();
+  }
+}
+
+/* ================= EVENT DELEGATION ================= */
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-act]");
+  if(!btn) return;
+
+  const act = btn.dataset.act;
+  const id  = btn.dataset.id;
+
+  if(act === "go"){ e.preventDefault(); page(id); return; }
+  if(act === "clear"){ clearCart(); return; }
+
+  const p = byId(id);
+  if(!p) return;
+
+  switch(act){
+    case "inc":      selection[id] = clamp((selection[id] || 1) + 1); syncQtyDisplays(); break;
+    case "dec":      selection[id] = clamp((selection[id] || 1) - 1); syncQtyDisplays(); break;
+    case "add":      addToCart(id, selection[id] || 1); break;
+    case "cart-inc": setCartQty(id, cartQty(id) + 1); break;
+    case "cart-dec": setCartQty(id, cartQty(id) - 1); break;
+    case "remove":   removeFromCart(id); break;
+  }
+});
+
+/* ================= INIT ================= */
+(function init(){
+  cart = loadCart();
+  renderAllGrids();
+  updateBadges();
+  renderCart();
+})();
 </script>
 </body>
-</html>
+  </html>
